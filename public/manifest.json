@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Team Calendar Switcher",
+  "version": "1.0.2",
+  "description": "Google Calendar上でチームのカレンダーを簡単に切り替えられる拡張機能",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Team Calendar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "identity",
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://calendar.google.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "oauth2": {
+    "client_id": "143770275779-u88c0146c2a10suiik4qvh4lbdrsdfup.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar",
+      "https://www.googleapis.com/auth/calendar.freebusy",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  }
+}
+
