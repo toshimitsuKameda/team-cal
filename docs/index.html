@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Calendar Switcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #202124;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #5f6368;
+            margin-bottom: 40px;
+        }
+
+        .description {
+            text-align: left;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .description h2 {
+            font-size: 1.5em;
+            color: #202124;
+            margin-bottom: 15px;
+        }
+
+        .description ul {
+            margin-left: 25px;
+        }
+
+        .description li {
+            margin-bottom: 10px;
+        }
+
+        .links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #1a73e8;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #1a73e8;
+            border: 2px solid #1a73e8;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e8f0fe;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e8eaed;
+            color: #5f6368;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📅</div>
+        <h1>Team Calendar Switcher</h1>
+        <p class="subtitle">Googleカレンダーでチームのカレンダーを簡単に切り替え</p>
+
+        <div class="description">
+            <h2>機能</h2>
+            <ul>
+                <li>チームメンバーのカレンダーを一括で表示/非表示</li>
+                <li>複数のチームを登録して素早く切り替え</li>
+                <li>チームメンバーの空き状況をヒートマップで可視化</li>
+                <li>直感的なUIで簡単操作</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/toshimitsuKameda/team-cal" class="btn btn-primary" target="_blank">
+                GitHub リポジトリ
+            </a>
+            <a href="privacy-policy.html" class="btn btn-secondary">
+                プライバシーポリシー
+            </a>
+        </div>
+
+        <footer>
+            <p>Chrome Web Storeでの公開準備中</p>
+            <p style="margin-top: 10px;">
+                <a href="privacy-policy.html">プライバシーポリシー</a>
+            </p>
+            <p style="margin-top: 20px;">© 2025 Team Calendar Switcher</p>
+        </footer>
+    </div>
+</body>
+</html>
+
