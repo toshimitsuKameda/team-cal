@@ -176,17 +176,14 @@
             margin-bottom: 4px;
         }
 
-        /* 2カラムレイアウト（大画面） */
-        @media (min-width: 900px) {
-            .two-column {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
 
-            .two-column .section {
-                margin-bottom: 0;
-            }
+        .info-item {
+            margin-bottom: 8px;
         }
 
         @media (max-width: 768px) {
@@ -285,54 +282,44 @@
                 </div>
             </section>
 
-            <h2>必要な権限とスコープ</h2>
-
-            <div class="two-column">
-                <section class="section">
-                    <h3>Chrome拡張機能の権限</h3>
-                    
+            <section class="section">
+                <h2>必要な権限とスコープ</h2>
+                
+                <h3>Chrome拡張機能の権限</h3>
+                <div class="info-grid">
                     <p><strong>identity</strong>: Google OAuth認証によるログイン、アクセストークン取得</p>
-                    
                     <p><strong>storage</strong>: チーム設定を<code>chrome.storage.sync</code>に保存、デバイス間で同期</p>
-                    
                     <p><strong>tabs</strong>: Googleカレンダーのタブと連携、拡張機能の動作</p>
-                    
                     <p><strong>https://www.googleapis.com/*</strong>: Google Calendar APIへのアクセス、データ取得</p>
-                    
                     <p><strong>https://calendar.google.com/*</strong>: カレンダーページへのUI挿入</p>
-                </section>
+                </div>
 
-                <section class="section">
-                    <h3>OAuth スコープ</h3>
-                    
+                <h3>OAuth スコープ</h3>
+                <div class="info-grid">
                     <p><strong>calendar</strong>: カレンダーの表示/非表示の切り替え、チーム切り替え時の自動表示</p>
-                    
                     <p><strong>calendar.freebusy</strong>: 空き/予定あり情報の取得、メンバーの空き状況表示</p>
-                    
                     <p><strong>userinfo.email</strong>: ユーザーのメールアドレス取得、認証識別</p>
-                </section>
-            </div>
+                </div>
+            </section>
 
-            <div class="two-column">
-                <section class="section">
-                    <h2>データのセキュリティ</h2>
-                    <ul>
-                        <li><strong>HTTPS通信</strong>: すべてのAPI通信を暗号化</li>
-                        <li><strong>トークンの安全な管理</strong>: Chromeセキュアストレージに保存</li>
-                        <li><strong>最小権限の原則</strong>: 必要最小限の権限のみ要求</li>
-                        <li><strong>定期的なセキュリティレビュー</strong>: コード監査を実施</li>
-                    </ul>
-                </section>
+            <section class="section">
+                <h2>データのセキュリティ</h2>
+                <ul>
+                    <li><strong>HTTPS通信</strong>: すべてのAPI通信を暗号化</li>
+                    <li><strong>トークンの安全な管理</strong>: Chromeセキュアストレージに保存</li>
+                    <li><strong>最小権限の原則</strong>: 必要最小限の権限のみ要求</li>
+                    <li><strong>定期的なセキュリティレビュー</strong>: コード監査を実施</li>
+                </ul>
+            </section>
 
-                <section class="section">
-                    <h2>データの保持期間</h2>
-                    <ul>
-                        <li><strong>チーム設定</strong>: アンインストールまで保持</li>
-                        <li><strong>空き/予定ありキャッシュ</strong>: 最大60秒（自動削除）</li>
-                        <li><strong>認証トークン</strong>: ログアウト/アンインストールまで保持</li>
-                    </ul>
-                </section>
-            </div>
+            <section class="section">
+                <h2>データの保持期間</h2>
+                <ul>
+                    <li><strong>チーム設定</strong>: アンインストールまで保持</li>
+                    <li><strong>空き/予定ありキャッシュ</strong>: 最大60秒（自動削除）</li>
+                    <li><strong>認証トークン</strong>: ログアウト/アンインストールまで保持</li>
+                </ul>
+            </section>
 
             <section class="section">
                 <h2>ユーザーの権利</h2>
@@ -344,25 +331,23 @@
                 <p><a href="https://myaccount.google.com/permissions" target="_blank">Googleアカウントのセキュリティページ</a> → "Team Calendar" → "アクセス権を削除"</p>
             </section>
 
-            <div class="two-column">
-                <section class="section">
-                    <h2>Cookieとトラッキング</h2>
-                    <div class="highlight">
-                        <ul class="icon-list">
-                            <li class="cross">Cookieを使用しません</li>
-                            <li class="cross">トラッキングを行いません</li>
-                            <li class="cross">広告を表示しません</li>
-                            <li class="cross">アナリティクスを使用しません</li>
-                        </ul>
-                    </div>
-                </section>
+            <section class="section">
+                <h2>Cookieとトラッキング</h2>
+                <div class="highlight">
+                    <ul class="icon-list">
+                        <li class="cross">Cookieを使用しません</li>
+                        <li class="cross">トラッキングを行いません</li>
+                        <li class="cross">広告を表示しません</li>
+                        <li class="cross">アナリティクスを使用しません</li>
+                    </ul>
+                </div>
+            </section>
 
-                <section class="section">
-                    <h2>その他の重要事項</h2>
-                    <p><strong>子どもの個人情報</strong>: 13歳未満の子どもから意図的に個人情報を収集しません。</p>
-                    <p><strong>ポリシーの変更</strong>: 必要に応じて更新します。重大な変更は拡張機能の更新ノートで通知します。</p>
-                </section>
-            </div>
+            <section class="section">
+                <h2>その他の重要事項</h2>
+                <p><strong>子どもの個人情報</strong>: 13歳未満の子どもから意図的に個人情報を収集しません。</p>
+                <p><strong>ポリシーの変更</strong>: 必要に応じて更新します。重大な変更は拡張機能の更新ノートで通知します。</p>
+            </section>
 
             <section class="section">
                 <h2>お問い合わせ</h2>
@@ -374,24 +359,20 @@
             <section class="section">
                 <h2>技術的な詳細（開発者向け）</h2>
                 
-                <div class="two-column">
-                    <div>
-                        <h3>データフロー</h3>
-                        <pre><code>ユーザー → Chrome拡張機能
+                <h3>データフロー</h3>
+                <pre><code>ユーザー → Chrome拡張機能
   → Google Calendar API (HTTPS)
   → ブラウザのメモリ/ストレージ</code></pre>
 
-                        <h3>キャッシュの実装</h3>
-                        <pre><code>// TTL: 60秒
+                <h3>キャッシュの実装</h3>
+                <pre><code>// TTL: 60秒
 const cache = new Map&lt;string, {
   data: FreeBusyData,
   timestamp: number
 }&gt;();</code></pre>
-                    </div>
 
-                    <div>
-                        <h3>ストレージの内容例</h3>
-                        <pre><code>{
+                <h3>ストレージの内容例</h3>
+                <pre><code>{
   "teams": [{
     "id": "uuid-v4",
     "name": "開発チーム",
@@ -401,8 +382,6 @@ const cache = new Map&lt;string, {
     }]
   }]
 }</code></pre>
-                    </div>
-                </div>
             </section>
         </main>
 
